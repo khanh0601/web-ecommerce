@@ -4,11 +4,15 @@ import { Link } from "react-router-dom"
 const Navbar = () => {
   // Toogle Menu
   const [MobileMenu, setMobileMenu] = useState(false)
+  const [menuLeft, setMenuLeft]=useState(false)
+  const addMenuLeft=()=>{
+setMenuLeft(true);
+  }
   return (
     <>
       <header className='header'>
         <div className='container d_flex'>
-          <div className='catgrories d_flex'>
+          <div className='catgrories d_flex' onMouseOver={addMenuLeft}>
             <span class='fa-solid fa-border-all'></span>
             <h4>
               Categories <i className='fa fa-chevron-down'></i>

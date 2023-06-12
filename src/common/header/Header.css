@@ -10,7 +10,7 @@
 }
 
 .head label {
-  margin-right: 30px;
+  margin-right: 20px;
   font-size: 13px;
 }
 
@@ -27,9 +27,24 @@
 
 .search .width {
   width: 20%;
+
+}
+
+.me-10 {
+  margin-right: 10px;
+}
+
+.search-box-desktop {
+  display: flex;
+}
+
+.search-box-mobile {
+  display: none;
 }
 
 .search-box {
+  margin-right: 10px;
+
   width: 80%;
   border: 2px solid rgba(0, 0, 0, 0.1);
   /*padding: 10px;*/
@@ -55,7 +70,8 @@
 }
 
 .search-box span {
-  width: 20%;
+  width: max-content;
+  white-space: nowrap;
   opacity: 0.5;
   border-left: 2px solid rgba(0, 0, 0, 0.1);
   padding: 10px;
@@ -84,11 +100,13 @@
 
 /*------search-----------*/
 .catgrories {
+  align-items: center;
   background-color: #f6f9fc;
   padding: 0px 30px;
   border-radius: 5px;
   height: 6vh;
   margin-top: 5px;
+  position: relative;
 }
 
 .catgrories span {
@@ -125,6 +143,15 @@ header ul li a {
   font-weight: 400;
 }
 
+.navlink {
+  position: relative;
+}
+
+header .navlink .toggle {
+  position: absolute;
+
+}
+
 header ul li a:hover {
   color: #ff014f;
 }
@@ -134,7 +161,7 @@ header ul li a:hover {
 }
 
 .search.active {
-  height: 12vh;
+
   position: fixed;
   top: 0;
   z-index: 1000;
@@ -144,7 +171,72 @@ header ul li a:hover {
   transition: 0.5s;
 }
 
+.d-flex {
+  display: flex;
+  flex-direction: row;
+
+}
+
+.justify-content-end {
+  justify-content: end;
+}
+
+
+
+@media screen and (max-width: 992px) {
+
+  .nav-links-MobileMenu {
+    background: linear-gradient(145deg, #e2e8ec, #ffffff);
+    top: 90px;
+    width: max-content;
+    right: 10px;
+    box-shadow: 0 20px 60px -20px #00000025;
+    z-index: 100000;
+    position: absolute;
+    padding: 10px 50px 10px 20px;
+    border-radius: 10px;
+  }
+
+  .close,
+  .open {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #0f3460;
+    display: block;
+    font-size: 25px;
+    z-index: 999;
+  }
+
+  header .link {
+    display: none;
+  }
+
+  .close {
+    right: 45%;
+  }
+}
+
+@media (max-width: 805px) {
+  .d-flex {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 @media (max-width: 768px) {
+  .search-box-desktop {
+    display: none;
+  }
+
+  .search-box-mobile {
+    display: flex;
+    width: 90%;
+    margin: 10px auto 0 auto;
+  }
+
+
+
   header ul {
     padding-top: 30px;
   }
@@ -170,36 +262,23 @@ header ul li a:hover {
     line-height: 70px;
   }
 
-  header .link {
-    display: none;
-  }
 
-  .close,
-  .open {
-    position: absolute;
-    top: 35px;
-    right: 20px;
-    color: #ff014f;
-    display: block;
-    font-size: 25px;
-    z-index: 999;
-  }
 
-  .close {
-    right: 45%;
-  }
+
+
+
 
   .close.home-btn {
-    background: linear-gradient(145deg, #e2e8ec, #ffffff);
-    color: #ff014f;
+
+    color: #0f3460;
     border-radius: 50%;
     padding: 0;
     width: 60px;
     height: 60px;
     line-height: 60px;
+    position: absolute;
+    top: 17px;
   }
 
-  .header.active {
-    height: 10vh;
-  }
+
 }

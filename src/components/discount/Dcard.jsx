@@ -12,6 +12,21 @@ const Dcard = () => {
     slidesToShow: 6,
     slidesToScroll: 1,
     autoplay: true,
+    responsive:[
+      {
+        breakpoint:1250,
+        settings:{
+          slidesToShow: 3,
+        }
+      },
+      {
+        breakpoint:767,
+        settings:{
+          slidesToShow: 1,
+          dots: true,
+        }
+      }
+    ]
   }
   return (
     <>

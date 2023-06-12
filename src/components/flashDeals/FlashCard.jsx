@@ -2,6 +2,8 @@ import React, { useState } from "react"
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
+import { useContext } from "react"
+import { Appcontext } from "../contextStore"
 
 const SampleNextArrow = (props) => {
   const { onClick } = props
@@ -23,7 +25,8 @@ const SamplePrevArrow = (props) => {
     </div>
   )
 }
-const FlashCard = ({ productItems, addToCart }) => {
+const FlashCard = () => {
+  const {addToCart,productItems}=useContext(Appcontext)
   const [count, setCount] = useState(0)
   const increment = () => {
     setCount(count + 1)
@@ -31,11 +34,31 @@ const FlashCard = ({ productItems, addToCart }) => {
   const settings = {
     dots: false,
     infinite: true,
+    autoplay: true,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
+    responsive:[
+      {
+      breakpoint:992,
+        settings:{
+          slidesToShow:3,
+          slidesToScroll:1,
+        }
+      },
+      {
+        breakpoint:767,
+          settings:{
+            slidesToShow:1,
+            slidesToScroll:1,
+            nextArrow: false,
+            prevArrow:false,
+            dots: true,
+          }
+        }
+    ]
   }
 
   return (
@@ -47,7 +70,7 @@ const FlashCard = ({ productItems, addToCart }) => {
               <div className='product mtop'>
                 <div className='img'>
                   <span className='discount'>{productItems.discount}% Off</span>
-                  <img src={productItems.cover} alt='' />
+                  <img src={productItems.cover} alt='' className="w-100" />
                   <div className='product-like'>
                     <label>{count}</label> <br />
                     <i className='fa-regular fa-heart' onClick={increment}></i>

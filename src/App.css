@@ -82,6 +82,10 @@ button {
   border-radius: 50%;
 }
 
+button {
+  cursor: pointer;
+}
+
 .boxShadow {
   box-shadow: rgb(43 52 69 / 10%) 0px 4px 16px;
 }
@@ -251,8 +255,13 @@ button {
   grid-gap: 30px;
 }
 
-.grid2 {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 10px;
+@media screen and (max-width:767px) {
+  .background {
+
+    padding: 20px 0;
+  }
+
+  .product {
+    padding: 10px;
+  }
 }

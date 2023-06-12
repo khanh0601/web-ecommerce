@@ -44,9 +44,11 @@
 
 //export default ShopCart
 
-import React, { useState } from "react"
+import React, { useContext, useState } from "react"
+import { Appcontext } from "../contextStore"
 
-const ShopCart = ({ shopItems, addToCart }) => {
+const ShopCart = () => {
+  const {shopItems,addToCart} = useContext(Appcontext)
   const [count, setCount] = useState(0)
   const increment = () => {
     setCount(count + 1)
