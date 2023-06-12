@@ -64,9 +64,9 @@ const FlashCard = () => {
   return (
     <>
       <Slider {...settings}>
-        {productItems.map((productItems) => {
+        {productItems.map((productItems,index) => {
           return (
-            <div className='box'>
+            <div className='box' key={index}>
               <div className='product mtop'>
                 <div className='img'>
                   <span className='discount'>{productItems.discount}% Off</span>

@@ -48,17 +48,17 @@ import React, { useContext, useState } from "react"
 import { Appcontext } from "../contextStore"
 
 const ShopCart = () => {
+  console.log("--", useContext(Appcontext));
   const {shopItems,addToCart} = useContext(Appcontext)
   const [count, setCount] = useState(0)
   const increment = () => {
     setCount(count + 1)
   }
-
   return (
     <>
-      {shopItems.map((shopItems, index) => {
+      {shopItems.map((shopItems,index) => {
         return (
-          <div className='box'>
+          <div className='box' key={index}>
             <div className='product mtop'>
               <div className='img'>
                 <span className='discount'>{shopItems.discount}% Off</span>

@@ -1,19 +1,22 @@
 import React, { useState } from "react"
+import { useContext } from "react"
 import { Link } from "react-router-dom"
+import { Appcontext } from "../../components/contextStore"
 
 const Navbar = () => {
+const {isopenCategory,setOpenCategory} = useContext(Appcontext)
   // Toogle Menu
   const [MobileMenu, setMobileMenu] = useState(false)
-  const [menuLeft, setMenuLeft]=useState(false)
+
   const addMenuLeft=()=>{
-setMenuLeft(true);
+setOpenCategory(!isopenCategory);
   }
   return (
     <>
       <header className='header'>
         <div className='container d_flex'>
-          <div className='catgrories d_flex' onMouseOver={addMenuLeft}>
-            <span class='fa-solid fa-border-all'></span>
+          <div className='catgrories d_flex' onClick={addMenuLeft}>
+            <span className='fa-solid fa-border-all'></span>
             <h4>
               Categories <i className='fa fa-chevron-down'></i>
             </h4>

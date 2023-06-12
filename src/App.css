@@ -26,7 +26,7 @@ body {
 }
 
 .d_flex {
-  display: flex;
+  display: flex !important;
   justify-content: space-between;
 }
 
@@ -240,6 +240,7 @@ button {
 .heading .heading-left h2 {
   font-size: 25px;
   margin: 5px;
+  white-space: nowrap;
 }
 
 .heading .heading-right i,

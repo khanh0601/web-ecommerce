@@ -1,16 +1,15 @@
 import { createContext } from "react";
-import Sdata from "./MainPage/Sdata";
+import Sdata from "./shops/Sdata";
 import Data from "./Data"
 import { useState } from "react";
 export const Appcontext = createContext();
-export const AppProvider = ({ chidren }) => {
+
+export const AppProvider = ({ children }) => {
   const { productItems } = Data
   const { shopItems } = Sdata
   const [CartItem, setCartItem] = useState([])
   const [isopenCategory, setOpenCategory] = useState(false)
-  const activeMenuCategory = () => {
-    setOpenCategory(!isopenCategory);
-  }
+
   const addToCart = (product) => {
     const productExit = CartItem.find((item) => item.id === product.id)
     if (productExit) {
@@ -28,8 +27,8 @@ export const AppProvider = ({ chidren }) => {
     }
   }
   return (
-    <Appcontext.Provider value={{ productItems, shopItems, setCartItem, addToCart, decreaseQty, CartItem, activeMenuCategory, isopenCategory }}>
-      {chidren}
+    <Appcontext.Provider value={{ productItems, shopItems, setCartItem, addToCart, decreaseQty, CartItem, setOpenCategory, isopenCategory }}>
+      {children}
     </Appcontext.Provider>
   )
 }

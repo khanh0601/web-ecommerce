@@ -91,6 +91,10 @@
 
   }
 
+  .shop .category {
+    display: none;
+  }
+
   .shop .contentWidth {
     margin-left: 0px;
   }

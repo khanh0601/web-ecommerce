@@ -114,7 +114,7 @@
     width: 100%;
   }
 
-  .category {
+  .d-mb-none {
     display: none;
   }
 
@@ -134,5 +134,8 @@
     width: 100%;
   }
 
+  .category {
+    width: 100%;
+  }
 
 }

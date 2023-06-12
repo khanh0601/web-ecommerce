@@ -107,6 +107,7 @@
   height: 6vh;
   margin-top: 5px;
   position: relative;
+  cursor: pointer;
 }
 
 .catgrories span {

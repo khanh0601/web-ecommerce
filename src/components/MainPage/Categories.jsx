@@ -1,5 +1,6 @@
 import React from "react"
-
+import { useContext } from "react"
+import { Appcontext } from "../contextStore"
 const Categories = () => {
   const data = [
     {
@@ -47,10 +48,10 @@ const Categories = () => {
       cateName: "Books",
     },
   ]
-
+  const {isopenCategory} = useContext(Appcontext)
   return (
     <>
-      <div className='category'>
+      <div className={isopenCategory?'category':'category d-mb-none'}>
         {data.map((value, index) => {
           return (
             <div className='box f_flex' key={index}>
