@@ -7,6 +7,7 @@ import Cart from "./common/Cart/Cart"
 import Footer from "./common/footer/Footer"
 import { AppProvider } from "./components/contextStore"
 import Shop from "./components/shops/Shop"
+import Loggin from "./components/Loggin/Login"
 
 function App() {
 
@@ -45,7 +46,7 @@ function App() {
   //     setCartItem(CartItem.map((item) => (item.id === product.id ? { ...productExit, qty: productExit.qty - 1 } : item)))
   //   }
   // }
-
+  localStorage.setItem('logger', false)
   return (
     <>
 
@@ -56,8 +57,8 @@ function App() {
             <Route path='/' exact>
               <Pages />
             </Route>
-            <Route path='/home' exact>
-              <Shop />
+            <Route path='/loggin' exact>
+              <Loggin />
             </Route>
             <Route path='/cart' exact>
               <Cart />

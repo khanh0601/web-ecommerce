@@ -30,6 +30,11 @@
 
 }
 
+.search .width2 {
+  width: 45%;
+
+}
+
 .me-10 {
   margin-right: 10px;
 }
@@ -182,6 +187,19 @@ header ul li a:hover {
   justify-content: end;
 }
 
+.__text-logger {
+  color: #000;
+  padding: 10px 20px;
+  background-color: #f6f9fc;
+  box-shadow: -1px 11px 24px -11px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.__text-logger:hover {
+  color: #e94560;
+  opacity: .7;
+}
 
 
 @media screen and (max-width: 992px) {
